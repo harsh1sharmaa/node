@@ -1,17 +1,22 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require("mongodb");
 // Connection URL
-const url = 'mongodb://root:cedcommerce@127.0.0.1:27017/';
+const url = "mongodb://root:cedcommerce@127.0.0.1:27017/";
 const client = new MongoClient(url);
 // Database Name
-const dbName = 'remote';
+const dbName = "home";
 
-async function dbConnect(){
+async function dbConnect() {
+    let result;
+    try {
+     result = await client.connect();
+  } catch (error) {
+    console.log(error);
+  }
 
-    let result =await client.connect();
-
-   let data = result.db(dbName);
-   return  data.collection('products')
-//    console.log(await collection.find({}).toArray());
+  let data = result.db(dbName);
+  return data.collection("notifications");
+  // return data.collection("test");
+  //    console.log(await collection.find({}).toArray());
 }
 
 module.exports = dbConnect;
