@@ -179,3 +179,47 @@ function getRandomItem(arr) {
 
   return item;
 }
+
+//----------------------------------------------------------------
+
+/* 
+#!/bin/bash
+
+SECONDS=10
+END_TIME=$((SECONDS+60))
+arr=(w r t y h d s c v b n h g ) 
+I=0
+tLen=${#arr[@]}
+while [ $SECONDS -lt $END_TIME ]
+do
+  if [ $tLen  -eq  $I ]
+     then
+         I=0 
+     fi
+    xdotool key ${arr[RANDOM%13]}
+    echo ${arr[I]} >> keylog.js
+    sleep 0.5 
+    ((I++))
+done 
+
+
+#!/bin/bash
+
+
+SECONDS=30
+END_TIME=$((SECONDS+10))
+arr=(w r t y h d s c v b n h g d Return) 
+tLen=${#arr[@]}
+I=0
+while [ $SECONDS -lt $END_TIME ]
+do
+         if [ $tLen  -eq  $I ]
+     then
+         I=0 
+     fi
+    xdotool key ${arr[I]}
+    echo ${arr[I]} >> keylog.txt
+    sleep 0.5 
+    ((I++))
+done 
+ */
